@@ -13,7 +13,7 @@ import { ArrowLeftToLine, Ellipsis, SearchIcon, Tractor } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Autocomplete, AutocompleteItem } from "@nextui-org/react";
 import { tractorMakes } from "@/utils/product-data";
-import "./style.css";
+
 import AutoCompleteComponent from "@/components/AutoCompleteComponent";
 import { useEffect, useState } from "react";
 import Image from "next/image";

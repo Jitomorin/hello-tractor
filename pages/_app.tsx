@@ -5,8 +5,9 @@ import "swiper/css";
 import "swiper/css/bundle";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import "@/pages/dashboard/products/style.css";
 // import "./style.css";
-
+import "@/css/style.css";
 import { AppProps } from "next/dist/shared/lib/router/router";
 import Head from "next/head";
 import { ColorModeScript } from "nextjs-color-mode";

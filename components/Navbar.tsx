@@ -4,7 +4,7 @@ import DropdownUser from "./Header/DropdownUser";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import "@/css/style.css";
+
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 import { ShoppingBag } from "lucide-react";
