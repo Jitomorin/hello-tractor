@@ -1,0 +1,15 @@
+.autocomplete {
+  input {
+    border: none;
+    outline: none;
+    :focus {
+      outline: none;
+      border: none;
+      --tw-ring-color: none;
+    }
+  }
+}
+
+.box {
+  border-radius: none;
+}
