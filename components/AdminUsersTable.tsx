@@ -12,7 +12,6 @@ import { classNames, customersData } from "../contexts/utils";
 import { DOTS, useCustomPagination } from "./useCustomPagination";
 import { faColumns } from "@fortawesome/free-solid-svg-icons";
 import ProfileColumn from "./ProfileColumn";
-import RegisterUserModal from "./RegisterUserModal";
 
 export function GlobalFilter({
   globalFilter,
@@ -201,7 +200,6 @@ const AdminUsersTable = ({ placeholder, users }: any) => {
           setSnackbarOpen(true);
         }}
       />
-      <RegisterUserModal open={openModal} setOpen={setOpenModal} />
       <GlobalFilter
         preGlobalFilteredRows={preGlobalFilteredRows}
         globalFilter={state.globalFilter}
