@@ -9,8 +9,6 @@ import Separator from "components/Separator";
 import { media } from "utils/media";
 import RichText from "components/RichText";
 import { type } from "os";
-import { Employee } from "@/sanity/lib/queries";
-import { urlForImage } from "@/sanity/lib/image";
 import NextLink from "next/link";
 import { FacebookIcon, LinkedinIcon } from "react-share";
 import Image from "next/image";

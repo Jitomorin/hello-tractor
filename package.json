@@ -54,8 +54,6 @@
     "motion": "^11.11.17",
     "nanoid": "^5.0.7",
     "next": "13.4.19",
-    "next-sanity": "^5.5.3",
-    "next-sanity-image": "^6.1.0",
     "next-themes": "^0.3.0",
     "nextjs-color-mode": "^1.0.5",
     "react": "18.2.0",
