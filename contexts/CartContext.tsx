@@ -25,7 +25,7 @@ const CartProvider: React.FC = ({ children, userId }: any) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<any>(null);
   //   console.log("context data:", userId);
-  const docRef = doc(db, "carts", userId ? userId : "");
+  const docRef = doc(db, "carts", userId ? userId : "temp");
 
   useEffect(() => {
     onSnapshot(docRef, (data: any) => {
@@ -48,6 +48,7 @@ const CartProvider: React.FC = ({ children, userId }: any) => {
       } catch (error) {
         console.log(error);
         setError(error);
+        setCart(null);
         setLoading(false);
       }
     };
