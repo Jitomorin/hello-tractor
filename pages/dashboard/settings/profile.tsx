@@ -1,24 +1,12 @@
 import { useEffect, useState } from "react";
-import { Disclosure, Menu, Switch, Transition } from "@headlessui/react";
-import { MagnifyingGlassIcon, UserPlusIcon } from "@heroicons/react/20/solid";
-import {
-  Bars3Icon,
-  BellIcon,
-  CogIcon,
-  CreditCardIcon,
-  KeyIcon,
-  SquaresPlusIcon,
-  UserCircleIcon,
-  UserIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { UserPlusIcon } from "@heroicons/react/20/solid";
+import { UserCircleIcon, UserIcon } from "@heroicons/react/24/outline";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import Snackbar from "@/components/Snackbar";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { useRouter } from "next/router";
 import {
-  updateUserProfile,
   updateUserProfileNoEmail,
   updateUserProfilePicture,
 } from "@/utils/firebase/firestore";
@@ -28,7 +16,6 @@ import {
 } from "@/utils/firebase/storage";
 import { getUrl } from "@/utils/formatString";
 import { Button } from "@nextui-org/react";
-import { URLify } from "@/utils/usefulFunctions";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");

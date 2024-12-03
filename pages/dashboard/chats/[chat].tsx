@@ -11,12 +11,6 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Messages from "@/components/Messages";
 import Conversation from "@/components/Conversation";
-
-const defaultPosition = {
-  lat: 27.9878,
-  lng: 86.925,
-};
-
 interface Query {
   [key: string]: string;
 }

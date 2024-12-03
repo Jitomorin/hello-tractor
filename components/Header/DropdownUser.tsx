@@ -1,10 +1,7 @@
 import { Fragment, useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { useRouter } from "next/router";
 import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { classNames } from "@/contexts/utils";
 import { logout } from "@/utils/firebase/authentication";
 
 const DropdownUser = () => {

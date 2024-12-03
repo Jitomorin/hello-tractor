@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Metadata } from "next";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import styled from "styled-components";
-import Avatar from "@/components/Avatar";
 import { useAuthContext } from "@/contexts/AuthContext";
 import Loading from "@/components/Loading";
 import { useEffect, useState } from "react";

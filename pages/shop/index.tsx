@@ -13,14 +13,12 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/react";
-import { motion } from "framer-motion";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
   FunnelIcon,
   MinusIcon,
   PlusIcon,
-  Squares2X2Icon,
 } from "@heroicons/react/20/solid";
 import TractorGrid from "@/components/TractorGrid";
 import { tractorMakes } from "@/utils/product-data";

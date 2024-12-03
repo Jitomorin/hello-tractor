@@ -16,25 +16,14 @@ import Footer from "components/Footer";
 import { GlobalStyle } from "components/GlobalStyles";
 import Navbar from "components/Navbar";
 import NavigationDrawer from "components/NavigationDrawer";
-import NewsletterModal from "components/NewsletterModal";
-import {
-  NewsletterModalContextProvider,
-  useNewsletterModalContext,
-} from "contexts/newsletter-modal.context";
+
 import { NavItems } from "types";
 import Router, { useRouter } from "next/router";
-import styled from "styled-components";
-import ThemeContainer from "./style";
 import Loading from "@/components/Loading";
-import { AuthContextProvider, useAuthContext } from "@/contexts/AuthContext";
-import {
-  ProfileModalContextProvider,
-  useProfileModalContext,
-} from "@/contexts/profile-modal.context";
-import ProfileModal from "@/components/ProfileModal";
+import { AuthContextProvider } from "@/contexts/AuthContext";
+
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider } from "next-themes";
-import Header from "@/components/Header";
 import { CartProvider } from "@/contexts/CartContext";
 
 export interface SharedPageProps {
@@ -123,7 +112,6 @@ function MyApp({ Component, pageProps }: AppProps) {
             ) : (
               <CartProvider userId={user?.uid}>
                 <Providers user={user && user}>
-                  <Modals />
                   {routerPathname === "/login" ||
                   routerPathname.includes("dashboard") ||
                   routerPathname === "/signup" ? null : (
@@ -150,21 +138,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 function Providers<T>({ children }: PropsWithChildren<T>) {
-  return (
-    <ProfileModalContextProvider>
-      <NewsletterModalContextProvider>
-        <NavigationDrawer items={navItems}>{children}</NavigationDrawer>
-      </NewsletterModalContextProvider>
-    </ProfileModalContextProvider>
-  );
-}
-
-function Modals() {
-  const { isModalOpened, setIsModalOpened } = useNewsletterModalContext();
-  if (!isModalOpened) {
-    return null;
-  }
-  return <NewsletterModal onClose={() => setIsModalOpened(false)} />;
+  return <NavigationDrawer items={navItems}>{children}</NavigationDrawer>;
 }
 
 export default MyApp;

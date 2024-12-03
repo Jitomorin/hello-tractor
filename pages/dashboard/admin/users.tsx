@@ -1,27 +1,10 @@
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
-import styled from "styled-components";
-import Chart from "@/components/Charts/page";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import { GetServerSideProps } from "next";
-import {
-  getAllData,
-  getAllSortedData,
-  getData,
-} from "@/utils/firebase/firestore";
-import { Car } from "@/components/CarData";
-import CarModelCard from "@/components/CarModelCard";
-import CarModelCardDashboard from "@/components/CarModelCarDashboard";
+import { getAllData } from "@/utils/firebase/firestore";
 import { useEffect, useState } from "react";
-import Dropdown from "@/components/Dropdown";
-import { FunnelIcon } from "@heroicons/react/20/solid";
-import UsersTable from "@/components/UsersTable";
-import { set } from "sanity";
-import RentalsTable from "@/components/RentalsTable";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import AdminUsersTable from "@/components/AdminUsersTable";
 import { useAuthContext } from "@/contexts/AuthContext";
-import { getUrl } from "@/utils/formatString";
 import DashboardTab from "@/components/DashboardTab";
 
 const tabs = [

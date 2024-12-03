@@ -1,14 +1,10 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
-import DeliveriesTable from "@/components/BookingsTable";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { getAllData, getFilteredData } from "@/utils/firebase/firestore";
-import BookingsTable from "@/components/BookingsTable";
 import Conversation from "@/components/Conversation";
-import Messages from "@/components/Messages";
 import { useRouter } from "next/router";
-import { isEmpty } from "@/utils/formatString";
 
 function Chats() {
   const [chats, setChats] = useState([]);

@@ -3,9 +3,7 @@ import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import { getAllData } from "@/utils/firebase/firestore";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import AdminListingsTable from "@/components/AdminListingsTable";
-import { getUrl } from "@/utils/formatString";
 import DashboardTab from "@/components/DashboardTab";
 
 const tabs = [

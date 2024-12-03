@@ -1,43 +1,15 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
-import { Fragment, useEffect, useState } from "react";
-import { Disclosure, Menu, Switch, Transition } from "@headlessui/react";
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
+import { useEffect, useState } from "react";
 import {
-  Bars3Icon,
-  BellIcon,
-  CogIcon,
-  CreditCardIcon,
-  KeyIcon,
-  SquaresPlusIcon,
   UserCircleIcon,
   UserIcon,
   UserPlusIcon,
-  XMarkIcon,
 } from "@heroicons/react/24/outline";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import Snackbar from "@/components/Snackbar";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { useRouter } from "next/router";
-import {
-  getDocument,
-  updateSettings,
-  updateUserProfile,
-  updateUserProfileNoEmail,
-} from "@/utils/firebase/firestore";
+import { getDocument, updateSettings } from "@/utils/firebase/firestore";
 import { uploadProfileImage } from "@/utils/firebase/storage";
 import { getUrl } from "@/utils/formatString";
 import { GetServerSideProps } from "next";

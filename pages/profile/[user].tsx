@@ -1,19 +1,10 @@
-import AdminListingsTable from "@/components/AdminListingsTable";
-import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import Divider from "@/components/Divider";
-import DefaultLayout from "@/components/Layouts/DefaultLayout";
-import RentalsTable from "@/components/RentalsTable";
 import ShowMore from "@/components/ShowMore";
-import Snackbar from "@/components/Snackbar";
-import Spinner from "@/components/Spinner";
 import TractorGrid from "@/components/TractorGrid";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { getDocument, getFilteredData } from "@/utils/firebase/firestore";
 import { uploadCoverImage } from "@/utils/firebase/storage";
-import { formatNumber } from "@/utils/formatNumber";
 import { BadgeCheckIcon } from "lucide-react";
 import { GetServerSideProps } from "next";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 

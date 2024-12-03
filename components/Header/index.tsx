@@ -1,8 +1,6 @@
 import Link from "next/link";
-import DropdownNotification from "./DropdownNotification";
 import DropdownUser from "./DropdownUser";
 import Image from "next/image";
-import Cart from "./Cart";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 
 const Header = (props: {

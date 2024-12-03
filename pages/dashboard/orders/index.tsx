@@ -1,9 +1,6 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
-import OrdersTable from "@/components/OrdersTable";
-import TableThree from "@/components/Tables/TableThree";
 import { useAuthContext } from "@/contexts/AuthContext";
-import { getFilteredData } from "@/utils/firebase/firestore";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 

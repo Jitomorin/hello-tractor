@@ -4,51 +4,26 @@ import Divider from "@/components/Divider";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import ProductOverview from "@/components/ProductOverview";
 import Snackbar from "@/components/Snackbar";
-import Spinner from "@/components/Spinner";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { v4 as uuidv4 } from "uuid";
 import {
   addDataWithDocName,
   checkIfChatExists,
-  documentListener,
   getAllData,
-  getAllRentalSlugs,
   getDocument,
-  getFilteredData,
-  setPickupAndDropoffLocations,
-  setProductStatus,
-  setRentalAvailability,
   updateOrderInformation,
-  updateOrderStatus,
-  updateOrderTransaction,
 } from "@/utils/firebase/firestore";
-import Axios from "axios";
-import { uploadCoverImage } from "@/utils/firebase/storage";
-import { getNumberOfDays } from "@/utils/formatDate";
-import {
-  calculatePrice,
-  calculateSubtotal,
-  formatNumber,
-} from "@/utils/formatNumber";
+import { formatNumber } from "@/utils/formatNumber";
 import { GetServerSideProps } from "next";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { StatusPill } from "@/components/StatusPill";
 import ProgressBar from "@/components/ProgressBar";
-import { PaidPill } from "@/components/PaidPill";
-import OrderColumn from "@/components/OrderColumn";
 import { Button } from "@nextui-org/react";
 import ConfirmationCodeOrderModal from "@/components/ConfirmationCodeOrderModal";
 import { generateConfirmationCode } from "@/utils/formatString";
-import ExampleModal from "@/components/ExampleModal";
 import ConfirmationCodeFormOrderModal from "@/components/ConfirmCodeFormOrderModal";
 import ReviewModal from "@/components/ReviewModal";
-
-const defaultPosition = {
-  lat: 27.9878,
-  lng: 86.925,
-};
 
 interface Query {
   [key: string]: string;

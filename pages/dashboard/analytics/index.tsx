@@ -1,25 +1,17 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
-import DeliveriesTable from "@/components/BookingsTable";
 import React, { useEffect, useState } from "react";
 import { useAuthContext } from "@/contexts/AuthContext";
 import {
   getFilteredData,
   getMultipleFilteredData,
 } from "@/utils/firebase/firestore";
-import BookingsTable from "@/components/BookingsTable";
-import Link from "next/link";
-import { classNames } from "@/contexts/utils";
 import { useRouter } from "next/router";
-import { getMonthFromTimestamp, getUrl } from "@/utils/formatString";
-import EarningsChart from "@/components/DoughnutChart";
-import DoughnutChart from "@/components/DoughnutChart";
-import LineChart from "@/components/LineChart";
-import { Button, Spinner } from "@nextui-org/react";
+import { getMonthFromTimestamp } from "@/utils/formatString";
+import { Spinner } from "@nextui-org/react";
 import { calculatePrice, formatNumber } from "@/utils/formatNumber";
-import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
+import { Tabs, Tab } from "@nextui-org/react";
 import BarChart from "@/components/BarChart";
-import RequestPaymentModal from "@/components/RequestPaymentModal";
 import Snackbar from "@/components/Snackbar";
 
 function Financials() {
@@ -231,19 +223,6 @@ function Financials() {
                     </>
                   </Tab>
                 </Tabs>
-              </div>
-              <div className="my-8">
-                <RequestPaymentModal
-                  user={user}
-                  availableAmount={addUpTotal(
-                    orders.filter((order: any) => !order.checkedOut)
-                  )}
-                  callSnackbar={(message: string) => {
-                    setSnackbarMessage(message);
-                    setSnackbarOpen(true);
-                  }}
-                  admins={admins}
-                />
               </div>
             </div>
           )}

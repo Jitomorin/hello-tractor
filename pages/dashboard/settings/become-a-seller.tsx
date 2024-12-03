@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Metadata } from "next";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import styled from "styled-components";
-import Avatar from "@/components/Avatar";
 import { useAuthContext } from "@/contexts/AuthContext";
 import Loading from "@/components/Loading";
 import { useEffect, useState } from "react";
@@ -15,7 +14,7 @@ import {
 } from "@/utils/firebase/storage";
 import Snackbar from "@/components/Snackbar";
 import {
-  updateHostInformation,
+  updateSellerInformation,
   updateUserProfile,
 } from "@/utils/firebase/firestore";
 import { useRouter } from "next/router";
@@ -28,7 +27,7 @@ import { getUrl } from "@/utils/formatString";
 import { classNames } from "@/contexts/utils";
 import { wait } from "@/utils/usefulFunctions";
 
-function BecomeHostPage() {
+function BevomeSeller() {
   const { user, loading }: any = useAuthContext();
   const [IDFront, setIDFront] = useState<any>(null);
   const [IDBack, setIDBack] = useState<any>(null);
@@ -57,8 +56,8 @@ function BecomeHostPage() {
         current: true,
       },
       {
-        name: "Become a host",
-        href: "/dashboard/settings/become-a-host",
+        name: "Become a seller",
+        href: "/dashboard/settings/become-a-seller",
         icon: UserPlusIcon,
         current: true,
       },
@@ -72,8 +71,8 @@ function BecomeHostPage() {
         current: true,
       },
       {
-        name: "Become a host",
-        href: "/dashboard/settings/become-a-host",
+        name: "Become a seller",
+        href: "/dashboard/settings/become-a-seller",
         icon: UserPlusIcon,
         current: true,
       },
@@ -95,7 +94,7 @@ function BecomeHostPage() {
   return (
     <DefaultLayout>
       <div className="mx-auto">
-        <Breadcrumb pageName="Become a host" index="Settings" />
+        <Breadcrumb pageName="Become a seller" index="Settings" />
         <main className="">
           <div className="mx-auto max-w-screen-xl px-4 pb-6 sm:px-6 lg:px-8 lg:pb-16 rounded-lg">
             <div className="overflow-hidden rounded-lg bg-white shadow-lg">
@@ -141,12 +140,12 @@ function BecomeHostPage() {
                   <div className="px-4 py-6 sm:p-6 lg:pb-8">
                     <div>
                       <h2 className="text-lg font-medium leading-6 text-gray-900">
-                        Become a host
+                        Become a seller
                       </h2>
                       <p className="mt-1 text-sm text-gray-500">
                         {user?.role === "client"
                           ? "Provide the following details and await approval."
-                          : "You are already a host."}
+                          : "You are already a seller."}
                       </p>
                     </div>
 
@@ -409,7 +408,7 @@ function BecomeHostPage() {
                   <div className="mt-4 flex justify-end gap-x-3 px-4 py-4 sm:px-6">
                     {/* <button
                       onClick={() => {
-                        console.log(user.hostInformation);
+                        console.log(user.sellerInformation);
                       }}
                       type="button"
                       className="inline-flex justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
@@ -422,17 +421,16 @@ function BecomeHostPage() {
                           if (fieldCheck()) {
                             if (
                               user?.role === "client" &&
-                              user?.hostInformation === undefined
+                              user?.sellerInformation === undefined
                             ) {
                               setSnackbarMessage("loading...");
                               setSnackbarOpen(true);
                               await uploadID([IDFront, IDBack], user?.uid).then(
                                 (URLs: any) => {
-                                  updateHostInformation(
+                                  updateSellerInformation(
                                     user?.uid,
                                     URLs.front,
-                                    URLs.back,
-                                    phoneNumber
+                                    URLs.back
                                   ).then(() => {
                                     setSnackbarMessage(
                                       "Request sent, reloading..."
@@ -484,4 +482,4 @@ function BecomeHostPage() {
   );
 }
 
-export default BecomeHostPage;
+export default BevomeSeller;

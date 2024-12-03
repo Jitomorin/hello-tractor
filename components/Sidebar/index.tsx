@@ -5,13 +5,9 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import SidebarLinkGroup from "./SidebarLinkGroup";
-import Divider from "../Divider";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { useRouter } from "next/router";
-import { QueueListIcon } from "@heroicons/react/24/outline";
-import { HomeIcon } from "@heroicons/react/20/solid";
 import {
-  House,
   HouseIcon,
   LogOutIcon,
   MessageCircleMoreIcon,

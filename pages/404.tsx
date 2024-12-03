@@ -1,18 +1,6 @@
 import styled from "styled-components";
 import Container from "components/Container";
 import { useTheme } from "next-themes";
-// import NotFoundIllustration from 'components/NotFoundIllustration';
-
-// const Wrapper = styled.section<{ theme: any }>`
-//   background: rgb(251, 251, 253);
-//   /* margin: 10rem 0; */
-//   width: 100vw;
-//   height: 100vh;
-//   text-align: center;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;
 
 const Wrapper = styled.section<{ theme: any }>`
   padding: 10rem 0;

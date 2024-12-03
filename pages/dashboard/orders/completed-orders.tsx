@@ -1,10 +1,8 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
-import DeliveriesTable from "@/components/BookingsTable";
 import React, { useEffect, useState } from "react";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { getFilteredData } from "@/utils/firebase/firestore";
-import BookingsTable from "@/components/BookingsTable";
 import Link from "next/link";
 import { classNames } from "@/contexts/utils";
 import { useRouter } from "next/router";

@@ -641,19 +641,17 @@ export async function verifyTractor(userId: string, isApproved: boolean) {
   }
 }
 
-export async function updateHostInformation(
+export async function updateSellerInformation(
   userID: string,
   frontID: string,
-  backID: string,
-  mpesaNum: any
+  backID: string
 ) {
   const userRef = doc(db, "users", userID);
   try {
     await updateDoc(userRef, {
-      hostInformation: {
+      sellerInformation: {
         frontID,
         backID,
-        mpesaNum,
       },
     });
     return {

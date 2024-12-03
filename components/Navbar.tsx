@@ -1,32 +1,13 @@
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import NextImage from "next/image";
-import styled from "styled-components";
-import ColorSwitcher from "./ColorSwitcher";
 import { useAuthContext } from "@/contexts/AuthContext";
-import { media } from "@/utils/media";
-import { useProfileModalContext } from "@/contexts/profile-modal.context";
-import Image from "next/image";
 import DropdownUser from "./Header/DropdownUser";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import { usePathname } from "next/navigation";
-import ThemeToggle from "./ThemeToggle";
 import { useTheme } from "next-themes";
 import "@/css/style.css";
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-  Popover,
-  PopoverButton,
-  PopoverPanel,
-} from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
-import { BellIcon, ShoppingBag } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 import { classNames } from "@/contexts/utils";
 import CartColumn from "./CartColumn";
 import { getDocument } from "@/utils/firebase/firestore";
@@ -41,7 +22,6 @@ function Navbar() {
   const [nav, setNav] = useState(false);
   const { user }: any = useAuthContext();
   const { theme }: any = useTheme();
-  const { setIsProfileModalOpened } = useProfileModalContext();
   const [wishlistOpen, setWishlistOpen] = useState(false);
   const [wishlistItems, setWishlistItems] = useState([]);
   const scrollPosition = useScrollPosition();

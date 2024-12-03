@@ -1,45 +1,12 @@
 "use client";
 
-import dynamic from "next/dynamic";
-
-import CardDataStats from "@/components/CardDataStats";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
-import WalletStats from "@/components/WalletStats";
-import styled from "styled-components";
-import Image from "next/image";
 import {
-  faCar,
-  faCreditCard,
-  faUsers,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import TableOne from "@/components/Tables/TableOne";
-import ChartOne from "@/components/Charts/ChartOne";
-import ChartTwo from "@/components/Charts/ChartTwo";
-import {
-  HomeIcon,
-  ClockIcon,
-  ScaleIcon,
-  CreditCardIcon,
-  UserGroupIcon,
-  DocumentChartBarIcon,
-  CogIcon,
-  QuestionMarkCircleIcon,
-  ShieldCheckIcon,
-  BuildingOfficeIcon,
-  CheckCircleIcon,
-  BanknotesIcon,
-  ChevronRightIcon,
-  CheckBadgeIcon,
-  UsersIcon,
-  ReceiptRefundIcon,
-  AcademicCapIcon,
   ChatBubbleOvalLeftIcon,
   ClipboardDocumentIcon,
   TruckIcon,
   Cog6ToothIcon,
 } from "@heroicons/react/24/outline";
-import { AnyAaaaRecord } from "dns";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { useEffect, useState } from "react";
 import {
@@ -49,32 +16,7 @@ import {
 } from "@/utils/firebase/firestore";
 import { useRouter } from "next/router";
 import { Button } from "@nextui-org/react";
-import AnnouncementsModal from "@/components/AnnouncementsModal";
-import { announcements } from "./temp";
 
-// const announcements = [
-//   {
-//     id: 1,
-//     title: "Office closed on July 2nd",
-//     href: "#",
-//     preview:
-//       "Cum qui rem deleniti. Suscipit in dolor veritatis sequi aut. Vero ut earum quis deleniti. Ut a sunt eum cum ut repudiandae possimus. Nihil ex tempora neque cum consectetur dolores.",
-//   },
-//   {
-//     id: 2,
-//     title: "New password policy",
-//     href: "#",
-//     preview:
-//       "Alias inventore ut autem optio voluptas et repellendus. Facere totam quaerat quam quo laudantium cumque eaque excepturi vel. Accusamus maxime ipsam reprehenderit rerum id repellendus rerum. Culpa cum vel natus. Est sit autem mollitia.",
-//   },
-//   {
-//     id: 3,
-//     title: "Office closed on July 2nd",
-//     href: "#",
-//     preview:
-//       "Tenetur libero voluptatem rerum occaecati qui est molestiae exercitationem. Voluptate quisquam iure assumenda consequatur ex et recusandae. Alias consectetur voluptatibus. Accusamus a ab dicta et. Consequatur quis dignissimos voluptatem nisi.",
-//   },
-// ];
 const actions = [
   {
     icon: TruckIcon,

@@ -1,23 +1,8 @@
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
-import styled from "styled-components";
-import Chart from "@/components/Charts/page";
+
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import { GetServerSideProps } from "next";
-import { getClient } from "@/sanity/lib/client";
-import {
-  getAllData,
-  getAllSortedData,
-  getData,
-} from "@/utils/firebase/firestore";
-import { Car } from "@/components/CarData";
-import CarModelCard from "@/components/CarModelCard";
-import CarModelCardDashboard from "@/components/CarModelCarDashboard";
-import { useEffect, useState } from "react";
-import Dropdown from "@/components/Dropdown";
-import { FunnelIcon } from "@heroicons/react/20/solid";
-import UsersTable from "@/components/UsersTable";
-import { set } from "sanity";
-import RentalsTable from "@/components/RentalsTable";
+
+import { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 

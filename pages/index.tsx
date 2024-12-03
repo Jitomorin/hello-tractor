@@ -1,17 +1,6 @@
 import Head from "next/head";
 // import Link from "components/Link";
 import { EnvVars } from "env";
-import Hero from "@/components/Hero";
-import PlanTrip from "@/components/PlanTrip";
-import PickCar from "@/components/PickCar";
-import Banner from "@/components/Banner";
-import ChooseUs from "@/components/ChooseUs";
-import Testimonials from "@/components/Testimonials";
-import RestAPI from "@/components/RestAPI";
-import { useEffect } from "react";
-import { auth } from "@/utils/firebase/config";
-import { sendEmailVerification } from "firebase/auth";
-import { LogoSlider } from "@/components/LogoSlider";
 import Category from "@/components/Category";
 
 export default function Homepage() {
